@@ -1,8 +1,13 @@
-def tipo_masa():
-    masas_disponibles = ["Tradicional", "Delgada", "Bordes de Queso"]
-    nueva_masa = input(f"Elige el tipo de masa ({', '.join(masas_disponibles)}): ").capitalize()
-    if nueva_masa in masas_disponibles:
-        return nueva_masa
+def tipo_masa(abrv, masa):
+    masas = {
+        'T': 'Masa Tradicional',
+        'D': 'Masa Delgada',
+        'B': 'Bordes de Queso'
+    }
+    if masa in masas:
+        abrv['masa'] = masas[masa]
+        print(f"Masa cambiada a {masas[masa]}")
     else:
-        print("Masa no disponible.")
-        return None
+        print("Opción de masa no válida")
+    return abrv
+
