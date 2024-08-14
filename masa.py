@@ -1,13 +1,11 @@
-def tipo_masa(abrv, masa):
+def tipo_masa(orden, eleccion):
     masas = {
         'T': 'Masa Tradicional',
         'D': 'Masa Delgada',
-        'B': 'Bordes de Queso'
+        'B': 'Masa con Bordes de Queso'
     }
-    if masa in masas:
-        abrv['masa'] = masas[masa]
-        print(f"Masa cambiada a {masas[masa]}")
+    if eleccion in masas:
+        orden['masa'] = masas[eleccion]
     else:
-        print("Opción de masa no válida")
-    return abrv
-
+        print("Opción de masa no válida.")
+    return orden
