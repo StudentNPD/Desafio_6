@@ -1,5 +1,8 @@
 #Desafio 6 Modulo 3
 import funciones
+import masa
+# agregando ingredientes
+import ingredientes
 
 orden = {'masa': 'Masa Tradicional','salsa': 'Salsa de Tomate','ingredientes': ['Queso']}
 
@@ -25,7 +28,7 @@ while True:
         D). Delgada
         B). Bordes de Queso
         > """).upper()
-        orden = tipo_masa(orden, eleccion)
+        orden = masa(orden, eleccion)
 
     elif opcion == '2':
         eleccion = input('''Seleccione su tipo de Salsa:
@@ -48,7 +51,7 @@ while True:
         8). Tocino
         9). Queso
         > '''))
-        orden = agregar_ingrediente(orden,eleccion)
+        orden = ingredientes(orden,eleccion)
 
     elif opcion == '4':
         eleccion = int(input('''Seleccione qué ingrediente quitar:
@@ -62,7 +65,7 @@ while True:
         8). Tocino
         9). Queso
         > '''))
-        orden = quitar_ingrediente(orden,eleccion)
+        orden = ingredientes(orden,eleccion)
 
 
     elif opcion == '5':
@@ -82,3 +85,4 @@ while True:
     elif opcion == '0':
         print('Su pedido ha sido cancelado. Pizza JAT')
         exit()    
+        
