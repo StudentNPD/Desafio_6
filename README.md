@@ -5,7 +5,7 @@ Pizza JAT, una empresa de pizzería a nivel mundial que desea automatizar su pro
 solicitud de Pizzas. Para ello, se le solicita generar un prototipo rápido que abarque
 elementos básicos para que el usuario pueda pedir su pizza
 
-----------------------------------------
+----------------------------------------------------
 ## Requerimientos
 
 Debes crear un programa modularizado y que respete las buenas prácticas que incluya:

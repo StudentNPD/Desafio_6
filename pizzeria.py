@@ -1,7 +1,7 @@
 #Desafio 6 Modulo 3
 import funciones
 import masa
-# agregando ingredientes
+import salsa
 import ingredientes
 
 orden = {'masa': 'Masa Tradicional','salsa': 'Salsa de Tomate','ingredientes': ['Queso']}
@@ -10,6 +10,9 @@ orden = {'masa': 'Masa Tradicional','salsa': 'Salsa de Tomate','ingredientes': [
 print("************************")
 print("Bienvenidos Pizzeria JAT")
 print("************************")
+
+print("Orden Básica:")
+funciones.mostrar(orden)
 
 while True:
     opcion = input('''Seleccione
@@ -28,7 +31,8 @@ while True:
         D). Delgada
         B). Bordes de Queso
         > """).upper()
-        orden = masa(orden, eleccion)
+        orden = masa.tipo_masa(orden, eleccion)
+        aux=input("--->Presione Enter para continuar")
 
     elif opcion == '2':
         eleccion = input('''Seleccione su tipo de Salsa:
@@ -37,7 +41,7 @@ while True:
         B). Barbecue
         P). Pesto
         > ''').upper()
-        orden = tipo_salsa(orden, eleccion)
+        orden = salsa.tipo_salsa(orden, eleccion)
 
     elif opcion == '3':
         eleccion = int(input('''Seleccione su Ingrediente:
@@ -70,7 +74,7 @@ while True:
 
     elif opcion == '5':
         funciones.mostrar(orden)
-
+        aux=input("--->Presione Enter para continuar")
 
     elif opcion == '6':
         tiempo = funciones.estimar_tiempo(orden)
@@ -80,9 +84,9 @@ while True:
             print('Gracias por comprar en Pizza JAT')
             print('Disfrute su Pizza!!!!!!')
             exit()
-
+        aux=input("--->Presione Enter para continuar")
 
     elif opcion == '0':
-        print('Su pedido ha sido cancelado. Pizza JAT')
+        print('Su pedido ha sido cancelado. Gracias por Preferirnos Pizza JAT')
         exit()    
         
