@@ -2,12 +2,14 @@
 import funciones
 import masa
 import salsa
-import suma_ingredientes
+#import suma_ingredientes
+import ingredientes as funcion_agregar_eliminar
 
-orden = {'masa': 'Masa Tradicional','salsa': 'Salsa de Tomate','ingredientes': ['Queso']}
-lista_ingredientes = ['Tomate','Champiñones','Aceituna','Cebolla','Pollo','Jamon','Carne','Tocino','Queso']
- 
 ingredientes= ['Queso']
+orden = {'masa': 'Masa Tradicional','salsa': 'Salsa de Tomate','ingredientes': ingredientes}
+#lista_ingredientes = ['Tomate','Champiñones','Aceituna','Cebolla','Pollo','Jamon','Carne','Tocino','Queso']
+
+#agregar=[]
 
 print("************************")
 print("Bienvenidos Pizzeria JAT")
@@ -47,11 +49,13 @@ while True:
 
     elif opcion == '3':
         
-        i=1
-        for elemento in  lista_ingredientes:
-            print(f"{i}). {lista_ingredientes[i-1]}") 
-            i=i+1
-        eleccion = int(input('''Seleccione su Ingrediente: '''))                      
+        #ingredientes.agregar_ingrediente()
+        
+        #i=1
+        #for elemento in  lista_ingredientes:
+        #    print(f"{i}). {lista_ingredientes[i-1]}") 
+        #    i=i+
+        
 #        1). Tomate
 #        2). Champiñones
 #        3). Aceituna
@@ -62,25 +66,29 @@ while True:
 #        8). Tocino
 #        9). Queso
 #        > '''))
-        ingredientes = suma_ingredientes.agregar_ingredientes(ingredientes,lista_ingredientes,eleccion)
+        #ingredientes = agregar_ingredientes(ingredientes,lista_ingredientes,eleccion)
+        ingredientes = funcion_agregar_eliminar.agregar_ingrediente(ingredientes)
+        
 
     elif opcion == '4':
-        eleccion = int(input('''Seleccione qué ingrediente quitar:
-        1). Tomate
-        2). Champiñones
-        3). Aceituna
-        4). Cebolla
-        5). Pollo
-        6). Jamón
-        7). Carne
-        8). Tocino
-        9). Queso
-        > '''))
-        orden = quitar_ingrediente(orden,eleccion)
+        #eleccion = int(input('''Seleccione qué ingrediente quitar:
+        #1). Tomate
+        #2). Champiñones
+        #3). Aceituna
+        #4). Cebolla
+        #5). Pollo
+        #6). Jamón
+        #7). Carne
+        #8). Tocino
+        #9). Queso
+        #> '''))
+        #orden = quitar_ingrediente(orden,eleccion)
+        ingredientes = funcion_agregar_eliminar.eliminar_ingrediente(ingredientes)
 
 
     elif opcion == '5':
-        funciones.mostrar(orden,ingredientes)
+        #funciones.mostrar(ingredientes.mostr)
+        funcion_agregar_eliminar.mostrar_ingredientes(ingredientes)
         aux=input("--->Presione ENTER para continuar")
 
     elif opcion == '6':
