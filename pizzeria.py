@@ -2,17 +2,19 @@
 import funciones
 import masa
 import salsa
-import ingredientes
+import suma_ingredientes
 
 orden = {'masa': 'Masa Tradicional','salsa': 'Salsa de Tomate','ingredientes': ['Queso']}
-
+lista_ingredientes = ['Tomate','Champiñones','Aceituna','Cebolla','Pollo','Jamon','Carne','Tocino','Queso']
+ 
+ingredientes= ['Queso']
 
 print("************************")
 print("Bienvenidos Pizzeria JAT")
 print("************************")
 
 print("Orden Básica:")
-funciones.mostrar(orden)
+funciones.mostrar(orden,ingredientes)
 
 while True:
     opcion = input('''Seleccione
@@ -32,7 +34,7 @@ while True:
         B). Bordes de Queso
         > """).upper()
         orden = masa.tipo_masa(orden, eleccion)
-        aux=input("--->Presione Enter para continuar")
+        aux=input("--->Presione ENTER para continuar")
 
     elif opcion == '2':
         eleccion = input('''Seleccione su tipo de Salsa:
@@ -44,18 +46,23 @@ while True:
         orden = salsa.tipo_salsa(orden, eleccion)
 
     elif opcion == '3':
-        eleccion = int(input('''Seleccione su Ingrediente:
-        1). Tomate
-        2). Champiñones
-        3). Aceituna
-        4). Cebolla
-        5). Pollo
-        6). Jamón
-        7). Carne
-        8). Tocino
-        9). Queso
-        > '''))
-        orden = ingredientes(orden,eleccion)
+        
+        i=1
+        for elemento in  lista_ingredientes:
+            print(f"{i}). {lista_ingredientes[i-1]}") 
+            i=i+1
+        eleccion = int(input('''Seleccione su Ingrediente: '''))                      
+#        1). Tomate
+#        2). Champiñones
+#        3). Aceituna
+#        4). Cebolla
+#        5). Pollo
+#        6). Jamón
+#        7). Carne
+#        8). Tocino
+#        9). Queso
+#        > '''))
+        ingredientes = suma_ingredientes.agregar_ingredientes(ingredientes,lista_ingredientes,eleccion)
 
     elif opcion == '4':
         eleccion = int(input('''Seleccione qué ingrediente quitar:
@@ -69,15 +76,15 @@ while True:
         8). Tocino
         9). Queso
         > '''))
-        orden = ingredientes(orden,eleccion)
+        orden = quitar_ingrediente(orden,eleccion)
 
 
     elif opcion == '5':
-        funciones.mostrar(orden)
-        aux=input("--->Presione Enter para continuar")
+        funciones.mostrar(orden,ingredientes)
+        aux=input("--->Presione ENTER para continuar")
 
     elif opcion == '6':
-        tiempo = funciones.estimar_tiempo(orden)
+        tiempo = funciones.estimar_tiempo(ingredientes)
         print(f'Su Pizza estará lista en {tiempo} minutos')
         ordenar = input('Desea ordenar ahora S/N: ').upper()
         if ordenar == 'S':
@@ -89,4 +96,3 @@ while True:
     elif opcion == '0':
         print('Su pedido ha sido cancelado. Gracias por Preferirnos Pizza JAT')
         exit()    
-        
