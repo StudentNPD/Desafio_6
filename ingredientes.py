@@ -55,9 +55,4 @@ def eliminar_ingrediente(ingredientes):
     return ingredientes
         
         
-def mostrar_ingredientes(ingredientes):
-    i = 0
-    for ingrediente in ingredientes:
-        print(i, ingrediente)
-        i+=1
-    
+
