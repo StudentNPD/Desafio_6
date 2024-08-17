@@ -87,8 +87,8 @@ while True:
 
 
     elif opcion == '5':
-        #funciones.mostrar(ingredientes.mostr)
-        funcion_agregar_eliminar.mostrar_ingredientes(ingredientes)
+        funciones.mostrar(orden, ingredientes)
+        
         aux=input("--->Presione ENTER para continuar")
 
     elif opcion == '6':
